@@ -64,7 +64,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
           <img 
-            src="https://drive.google.com/uc?export=view&id=1jm1YowbNOdo5KlWO77LFeFDiiuhplanE" 
+            src="https://lh3.googleusercontent.com/d/1jm1YowbNOdo5KlWO77LFeFDiiuhplanE" 
             alt="ATA Tech Hub Logo" 
             className="h-10 w-auto"
             referrerPolicy="no-referrer"
@@ -320,7 +320,7 @@ const Portfolio = ({ onClientClick }: { onClientClick: (url: string) => void }) 
     {
       name: "Shikha Tripathi",
       url: "https://shikha-tripathi.vercel.app/",
-      image: "https://drive.google.com/uc?export=view&id=1M469rJ_bx_cEZMLRwS6Tgfy3yVebSTdr"
+      image: "https://lh3.googleusercontent.com/d/1M469rJ_bx_cEZMLRwS6Tgfy3yVebSTdr"
     },
     {
       name: "Viacation",
@@ -391,11 +391,13 @@ const Founders = () => {
       name: "Akshay Jain",
       role: "Product + Strategy",
       linkedin: "https://www.linkedin.com/in/akshay19/",
+      bullets: ["Startup growth expert", "Product strategy specialist", "Business-first approach"]
     },
     {
       name: "Tarun Charan",
       role: "Tech + Execution",
       linkedin: "https://www.linkedin.com/in/taruncharan/",
+      bullets: ["Full-stack architect", "Scalable systems expert", "Fast delivery focus"]
     }
   ];
 
@@ -403,29 +405,38 @@ const Founders = () => {
     <section id="about" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet the Founders</h2>
-          <p className="text-black/60 max-w-xl mx-auto">The duo combining product vision with technical excellence.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Connect with Founders</h2>
+          <p className="text-black/60 max-w-xl mx-auto">The duo combining product vision with technical excellence. Connect on LinkedIn to discuss your project.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {founders.map((f, i) => (
             <motion.div 
-              key={i}
+              key={i} 
               whileHover={{ y: -5 }}
-              className="flex-1 bg-gray-50 rounded-3xl p-8 flex flex-col items-center text-center border border-black/5"
+              className="flex flex-col items-center text-center p-10 rounded-[2.5rem] bg-black/5 border border-black/5 group"
             >
-              <h3 className="text-2xl font-bold mb-1">{f.name}</h3>
+              <h3 className="text-3xl font-bold mb-1">{f.name}</h3>
               <p className="text-whatsapp font-bold mb-8 uppercase tracking-widest text-xs">{f.role}</p>
               
               <a 
                 href={f.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-[#0077b5] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-[#005a87] transition-colors shadow-lg shadow-[#0077b5]/20"
+                className="w-full max-w-[280px] bg-[#0077b5] text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-[#006396] transition-all shadow-xl shadow-[#0077b5]/30 mb-10 group-hover:scale-[1.02]"
               >
-                <Linkedin size={20} fill="white" />
-                Check out on LinkedIn
+                <Linkedin size={28} />
+                Connect Now
               </a>
+
+              <ul className="space-y-3">
+                {f.bullets.map((b, j) => (
+                  <li key={j} className="text-black/60 text-sm flex items-center justify-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-whatsapp" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
