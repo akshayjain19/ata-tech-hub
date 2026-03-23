@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { Menu, X, MessageCircle, ChevronRight, Check, Globe, Code, Cpu, Lightbulb, Users, Rocket, ArrowRight, ChevronDown, ExternalLink } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronRight, Check, Globe, Code, Cpu, Lightbulb, Users, Rocket, ArrowRight, ChevronDown, ExternalLink, Linkedin } from 'lucide-react';
 
 const WHATSAPP_URL = "https://wa.me/918441078510?text=Hi%20ATA%20Tech%20Hub,%20I'm%20interested%20in%20building%20a%20tech%20solution%20for%20my%20business.";
 
@@ -64,7 +64,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
           <img 
-            src="https://lh3.googleusercontent.com/d/1jm1YowbNOdo5KlWO77LFeFDiiuhplanE" 
+            src="https://drive.google.com/uc?export=view&id=1jm1YowbNOdo5KlWO77LFeFDiiuhplanE" 
             alt="ATA Tech Hub Logo" 
             className="h-10 w-auto"
             referrerPolicy="no-referrer"
@@ -320,7 +320,7 @@ const Portfolio = ({ onClientClick }: { onClientClick: (url: string) => void }) 
     {
       name: "Shikha Tripathi",
       url: "https://shikha-tripathi.vercel.app/",
-      image: "https://lh3.googleusercontent.com/d/1M469rJ_bx_cEZMLRwS6Tgfy3yVebSTdr"
+      image: "https://drive.google.com/uc?export=view&id=1M469rJ_bx_cEZMLRwS6Tgfy3yVebSTdr"
     },
     {
       name: "Viacation",
@@ -391,15 +391,11 @@ const Founders = () => {
       name: "Akshay Jain",
       role: "Product + Strategy",
       linkedin: "https://www.linkedin.com/in/akshay19/",
-      image: "https://lh3.googleusercontent.com/d/1LI9TOaQr-be78ARQnTn-LyZb-lUjpMTT",
-      bullets: ["Startup growth expert", "Product strategy specialist", "Business-first approach"]
     },
     {
       name: "Tarun Charan",
       role: "Tech + Execution",
       linkedin: "https://www.linkedin.com/in/taruncharan/",
-      image: "https://lh3.googleusercontent.com/d/1RMNQHYu2hQwc-Fqg4PjZ3zqvC2uR_W3",
-      bullets: ["Full-stack architect", "Scalable systems expert", "Fast delivery focus"]
     }
   ];
 
@@ -411,33 +407,26 @@ const Founders = () => {
           <p className="text-black/60 max-w-xl mx-auto">The duo combining product vision with technical excellence.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
           {founders.map((f, i) => (
-            <motion.a 
-              key={i} 
-              href={f.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div 
+              key={i}
               whileHover={{ y: -5 }}
-              className="flex flex-col items-center text-center group"
+              className="flex-1 bg-gray-50 rounded-3xl p-8 flex flex-col items-center text-center border border-black/5"
             >
-              <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-black/5 group-hover:border-whatsapp transition-colors">
-                <img src={f.image} alt={f.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
-              <h3 className="text-2xl font-bold mb-1 flex items-center gap-2">
-                {f.name}
-                <ArrowRight size={18} className="text-whatsapp opacity-0 group-hover:opacity-100 transition-opacity" />
-              </h3>
-              <p className="text-whatsapp font-bold mb-4 uppercase tracking-widest text-xs">{f.role}</p>
-              <ul className="space-y-2">
-                {f.bullets.map((b, j) => (
-                  <li key={j} className="text-black/60 text-sm flex items-center justify-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-whatsapp" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </motion.a>
+              <h3 className="text-2xl font-bold mb-1">{f.name}</h3>
+              <p className="text-whatsapp font-bold mb-8 uppercase tracking-widest text-xs">{f.role}</p>
+              
+              <a 
+                href={f.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#0077b5] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-[#005a87] transition-colors shadow-lg shadow-[#0077b5]/20"
+              >
+                <Linkedin size={20} fill="white" />
+                Check out on LinkedIn
+              </a>
+            </motion.div>
           ))}
         </div>
       </div>
