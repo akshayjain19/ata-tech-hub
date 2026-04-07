@@ -13,22 +13,22 @@ const ConfirmationModal = ({ isOpen, onClose, onConfirm, url }: { isOpen: boolea
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl"
+            className="bg-midnight rounded-3xl p-8 max-w-md w-full shadow-2xl border border-slate-blue/20"
           >
-            <h3 className="text-2xl font-bold mb-4">Leaving Website?</h3>
-            <p className="text-black/60 mb-8 leading-relaxed">
+            <h3 className="text-2xl font-bold mb-4 text-parchment">Leaving Website?</h3>
+            <p className="text-parchment/60 mb-8 leading-relaxed">
               Are you sure you want to leave the website?
             </p>
             <div className="flex gap-4">
               <button 
                 onClick={onClose}
-                className="flex-1 py-4 rounded-2xl font-bold bg-black/5 hover:bg-black/10 transition-colors"
+                className="flex-1 py-4 rounded-2xl font-bold bg-slate-blue/10 hover:bg-slate-blue/20 transition-colors text-parchment"
               >
                 Cancel
               </button>
               <button 
                 onClick={onConfirm}
-                className="flex-1 py-4 rounded-2xl font-bold bg-whatsapp text-white hover:bg-whatsapp/90 transition-colors"
+                className="flex-1 py-4 rounded-2xl font-bold bg-gold text-midnight hover:bg-gold/90 transition-colors"
               >
                 Yes, Continue
               </button>
@@ -79,7 +79,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-sm font-medium hover:text-whatsapp transition-colors">
+            <a key={link.name} href={link.href} className="text-sm font-medium hover:text-gold transition-colors text-parchment/80">
               {link.name}
             </a>
           ))}
@@ -87,7 +87,7 @@ const Navbar = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-whatsapp transition-colors flex items-center gap-2"
+            className="bg-gold text-midnight px-5 py-2 rounded-full text-sm font-medium hover:bg-gold/90 transition-colors flex items-center gap-2"
           >
             Contact
           </a>
@@ -106,7 +106,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-black/5 overflow-hidden"
+            className="md:hidden bg-midnight border-b border-slate-blue/20 overflow-hidden"
           >
             <div className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
@@ -114,7 +114,7 @@ const Navbar = () => {
                   key={link.name} 
                   href={link.href} 
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium py-2"
+                  className="text-lg font-medium py-2 text-parchment"
                 >
                   {link.name}
                 </a>
@@ -123,7 +123,7 @@ const Navbar = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-whatsapp text-white p-4 rounded-xl text-center font-bold flex items-center justify-center gap-2"
+                className="bg-gold text-midnight p-4 rounded-xl text-center font-bold flex items-center justify-center gap-2"
               >
                 <MessageCircle size={20} />
                 Chat on WhatsApp
@@ -146,13 +146,13 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <span className="inline-block py-1 px-3 rounded-full bg-whatsapp/10 text-whatsapp text-xs font-bold uppercase tracking-wider mb-6">
+          <span className="inline-block py-1 px-3 rounded-full bg-gold/10 text-gold text-xs font-bold uppercase tracking-wider mb-6">
             Tech for Growth
           </span>
           <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
-            Build, Launch & Scale Your Tech — <span className="text-whatsapp">Without Hiring a Team</span>
+            Build, Launch & Scale Your Tech — <span className="text-gold">Without Hiring a Team</span>
           </h1>
-          <p className="text-lg md:text-xl text-black/60 mb-10 max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-parchment/60 mb-10 max-w-xl leading-relaxed">
             Websites, software & custom solutions built for real business growth. We handle the tech, you scale the business.
           </p>
           
@@ -162,7 +162,7 @@ const Hero = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-whatsapp text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 whatsapp-shadow"
+              className="bg-gold text-midnight px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 gold-shadow"
             >
               <MessageCircle size={22} />
               Chat on WhatsApp
@@ -170,17 +170,17 @@ const Hero = () => {
             <motion.a
               whileTap={{ scale: 0.95 }}
               href="#work"
-              className="bg-black/5 text-primary px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-black/10 transition-colors"
+              className="bg-slate-blue/10 text-parchment px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-slate-blue/20 transition-colors"
             >
               View Work
               <ChevronRight size={20} />
             </motion.a>
           </div>
           
-          <div className="mt-12 flex items-center gap-4 text-sm text-black/40 font-medium">
+          <div className="mt-12 flex items-center gap-4 text-sm text-parchment/40 font-medium">
             <div className="flex -space-x-2">
               {[1, 2, 3].map(i => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-black/10 flex items-center justify-center overflow-hidden">
+                <div key={i} className="w-8 h-8 rounded-full border-2 border-midnight bg-slate-blue/20 flex items-center justify-center overflow-hidden">
                   <img src={`https://picsum.photos/seed/user${i}/100/100`} alt="User" referrerPolicy="no-referrer" />
                 </div>
               ))}
@@ -192,7 +192,7 @@ const Hero = () => {
       
       {/* Background Decoration */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1/2 h-full opacity-10 pointer-events-none hidden lg:block">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-whatsapp rounded-full blur-[120px]" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold rounded-full blur-[120px]" />
       </div>
     </section>
   );
@@ -208,9 +208,9 @@ const SocialProof = ({ onClientClick }: { onClientClick: (url: string) => void }
   ];
 
   return (
-    <section className="py-12 bg-black/5 border-y border-black/5 overflow-hidden">
+    <section className="py-12 bg-slate-blue/5 border-y border-slate-blue/10 overflow-hidden">
       <div className="container mx-auto px-6 mb-6">
-        <p className="text-center text-xs font-bold uppercase tracking-widest text-black/30">Helping brands scale</p>
+        <p className="text-center text-xs font-bold uppercase tracking-widest text-parchment/30">Helping brands scale</p>
       </div>
       <div className="flex overflow-hidden group">
         <motion.div 
@@ -227,7 +227,7 @@ const SocialProof = ({ onClientClick }: { onClientClick: (url: string) => void }
             <button 
               key={i} 
               onClick={() => onClientClick(brand.url)}
-              className="text-2xl md:text-3xl font-display font-bold text-black/20 hover:text-whatsapp transition-colors cursor-pointer"
+              className="text-2xl md:text-3xl font-display font-bold text-parchment/20 hover:text-gold transition-colors cursor-pointer"
             >
               {brand.name}
             </button>
@@ -273,11 +273,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-midnight">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Expertise</h2>
-          <p className="text-black/60 max-w-xl mx-auto">We don't just write code; we build tools that solve problems and drive revenue.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-parchment">Our Expertise</h2>
+          <p className="text-parchment/60 max-w-xl mx-auto">We don't just write code; we build tools that solve problems and drive revenue.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -285,14 +285,14 @@ const Services = () => {
             <motion.div
               key={i}
               whileHover={{ y: -5 }}
-              className="p-8 rounded-3xl bg-black/5 border border-black/5 flex flex-col h-full"
+              className="p-8 rounded-3xl bg-slate-blue/5 border border-slate-blue/10 flex flex-col h-full"
             >
-              <div className="mb-6">{s.icon}</div>
-              <h3 className="text-xl font-bold mb-4">{s.title}</h3>
+              <div className="mb-6 text-gold">{s.icon}</div>
+              <h3 className="text-xl font-bold mb-4 text-parchment">{s.title}</h3>
               <ul className="space-y-3 mt-auto">
                 {s.points.map((p, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-black/60">
-                    <Check size={16} className="text-whatsapp mt-0.5 shrink-0" />
+                  <li key={j} className="flex items-start gap-2 text-sm text-parchment/60">
+                    <Check size={16} className="text-gold mt-0.5 shrink-0" />
                     {p}
                   </li>
                 ))}
@@ -335,14 +335,14 @@ const Portfolio = ({ onClientClick }: { onClientClick: (url: string) => void }) 
   ];
 
   return (
-    <section id="work" className="py-24 bg-black text-white overflow-hidden">
+    <section id="work" className="py-24 bg-midnight text-parchment overflow-hidden">
       <div className="container mx-auto px-6 mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected Work</h2>
-            <p className="text-white/60 max-w-xl">Real solutions for real businesses. No fluff, just results.</p>
+            <p className="text-parchment/60 max-w-xl">Real solutions for real businesses. No fluff, just results.</p>
           </div>
-          <a href={WHATSAPP_URL} className="text-whatsapp font-bold flex items-center gap-2 hover:underline">
+          <a href={WHATSAPP_URL} className="text-gold font-bold flex items-center gap-2 hover:underline">
             Want something like this? <ArrowRight size={20} />
           </a>
         </div>
@@ -365,7 +365,7 @@ const Portfolio = ({ onClientClick }: { onClientClick: (url: string) => void }) 
               onClick={() => onClientClick(p.url)}
               className="group cursor-pointer block w-[350px] md:w-[450px] shrink-0"
             >
-              <div className="aspect-[16/10] rounded-3xl overflow-hidden mb-6 bg-white/10 border border-white/5 flex items-center justify-center p-4">
+              <div className="aspect-[16/10] rounded-3xl overflow-hidden mb-6 bg-slate-blue/10 border border-slate-blue/20 flex items-center justify-center p-4">
                 <img 
                   src={p.image} 
                   alt={p.name} 
@@ -374,8 +374,8 @@ const Portfolio = ({ onClientClick }: { onClientClick: (url: string) => void }) 
                 />
               </div>
               <div className="flex justify-between items-center px-2">
-                <h3 className="text-2xl font-bold">{p.name}</h3>
-                <ExternalLink size={20} className="text-whatsapp opacity-0 group-hover:opacity-100 transition-opacity" />
+                <h3 className="text-2xl font-bold text-parchment">{p.name}</h3>
+                <ExternalLink size={20} className="text-gold opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
           ))}
@@ -402,11 +402,11 @@ const Founders = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 bg-midnight">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Connect with Founders</h2>
-          <p className="text-black/60 max-w-xl mx-auto">The duo combining product vision with technical excellence. Connect on LinkedIn to discuss your project.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-parchment">Connect with Founders</h2>
+          <p className="text-parchment/60 max-w-xl mx-auto">The duo combining product vision with technical excellence. Connect on LinkedIn to discuss your project.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
@@ -414,10 +414,10 @@ const Founders = () => {
             <motion.div 
               key={i} 
               whileHover={{ y: -5 }}
-              className="flex flex-col items-center text-center p-10 rounded-[2.5rem] bg-black/5 border border-black/5 group"
+              className="flex flex-col items-center text-center p-10 rounded-[2.5rem] bg-slate-blue/5 border border-slate-blue/10 group"
             >
-              <h3 className="text-3xl font-bold mb-1">{f.name}</h3>
-              <p className="text-whatsapp font-bold mb-8 uppercase tracking-widest text-xs">{f.role}</p>
+              <h3 className="text-3xl font-bold mb-1 text-parchment">{f.name}</h3>
+              <p className="text-gold font-bold mb-8 uppercase tracking-widest text-xs">{f.role}</p>
               
               <a 
                 href={f.linkedin}
@@ -431,8 +431,8 @@ const Founders = () => {
 
               <ul className="space-y-3">
                 {f.bullets.map((b, j) => (
-                  <li key={j} className="text-black/60 text-sm flex items-center justify-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-whatsapp" />
+                  <li key={j} className="text-parchment/60 text-sm flex items-center justify-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold" />
                     {b}
                   </li>
                 ))}
@@ -455,25 +455,25 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-black text-white">
+    <section id="process" className="py-24 bg-midnight text-parchment">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Process</h2>
-          <p className="text-white/60 max-w-xl mx-auto">How we turn your ideas into scalable tech products.</p>
+          <p className="text-parchment/60 max-w-xl mx-auto">How we turn your ideas into scalable tech products.</p>
         </div>
 
         <div className="max-w-2xl mx-auto">
           {steps.map((s, i) => (
             <div key={i} className="flex gap-6 mb-12 last:mb-0 relative">
               {i !== steps.length - 1 && (
-                <div className="absolute top-10 left-5 w-0.5 h-full bg-white/10" />
+                <div className="absolute top-10 left-5 w-0.5 h-full bg-slate-blue/20" />
               )}
-              <div className="w-10 h-10 rounded-full bg-whatsapp flex items-center justify-center font-bold shrink-0 z-10">
+              <div className="w-10 h-10 rounded-full bg-gold text-midnight flex items-center justify-center font-bold shrink-0 z-10">
                 {i + 1}
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">{s.title}</h3>
-                <p className="text-white/40">{s.desc}</p>
+                <p className="text-parchment/40">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -492,13 +492,13 @@ const Trust = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-midnight">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-black/5 flex flex-col items-center text-center">
-              <div className="text-whatsapp mb-4">{s.icon}</div>
-              <p className="font-bold text-sm">{s.label}</p>
+            <div key={i} className="p-8 rounded-3xl bg-slate-blue/5 flex flex-col items-center text-center border border-slate-blue/10">
+              <div className="text-gold mb-4">{s.icon}</div>
+              <p className="font-bold text-sm text-parchment">{s.label}</p>
             </div>
           ))}
         </div>
@@ -527,25 +527,25 @@ const Comparison = () => {
   ];
 
   return (
-    <section className="py-24 bg-black/5">
+    <section className="py-24 bg-slate-blue/5">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Us?</h2>
-          <p className="text-black/60 max-w-xl mx-auto">We bridge the gap between solo freelancers and bloated agencies.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-parchment">Why Choose Us?</h2>
+          <p className="text-parchment/60 max-w-xl mx-auto">We bridge the gap between solo freelancers and bloated agencies.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {options.map((o, i) => (
             <div 
               key={i} 
-              className={`p-8 rounded-3xl border ${o.highlight ? 'bg-black text-white border-black' : 'bg-white border-black/5'}`}
+              className={`p-8 rounded-3xl border ${o.highlight ? 'bg-midnight text-parchment border-gold/50' : 'bg-midnight/50 border-slate-blue/20'}`}
             >
-              <h3 className="text-2xl font-bold mb-6">{o.title}</h3>
+              <h3 className="text-2xl font-bold mb-6 text-parchment">{o.title}</h3>
               <ul className="space-y-4">
                 {o.points.map((p, j) => (
                   <li key={j} className="flex items-start gap-3 text-sm">
-                    {o.highlight ? <Check size={18} className="text-whatsapp shrink-0" /> : <X size={18} className="text-red-500 shrink-0" />}
-                    <span className={o.highlight ? 'text-white/80' : 'text-black/60'}>{p}</span>
+                    {o.highlight ? <Check size={18} className="text-gold shrink-0" /> : <X size={18} className="text-slate-blue shrink-0" />}
+                    <span className="text-parchment/70">{p}</span>
                   </li>
                 ))}
               </ul>
@@ -568,18 +568,18 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-midnight">
       <div className="container mx-auto px-6 max-w-3xl">
-        <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-parchment">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((f, i) => (
-            <div key={i} className="border border-black/5 rounded-2xl overflow-hidden">
+            <div key={i} className="border border-slate-blue/20 rounded-2xl overflow-hidden">
               <button 
-                className="w-full p-6 text-left flex justify-between items-center font-bold hover:bg-black/5 transition-colors"
+                className="w-full p-6 text-left flex justify-between items-center font-bold hover:bg-slate-blue/5 transition-colors text-parchment"
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
               >
                 {f.q}
-                <ChevronDown className={`transition-transform ${openIndex === i ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`transition-transform ${openIndex === i ? 'rotate-180' : ''} text-gold`} />
               </button>
               <AnimatePresence>
                 {openIndex === i && (
@@ -589,7 +589,7 @@ const FAQ = () => {
                     exit={{ height: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 pt-0 text-black/60 leading-relaxed">
+                    <div className="p-6 pt-0 text-parchment/60 leading-relaxed">
                       {f.a}
                     </div>
                   </motion.div>
@@ -605,19 +605,19 @@ const FAQ = () => {
 
 const FinalCTA = () => {
   return (
-    <section className="py-24 bg-whatsapp text-white text-center">
+    <section className="py-24 bg-gold text-midnight text-center">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-8 max-w-4xl mx-auto leading-tight">
           Let’s build something that actually grows your business
         </h2>
-        <p className="text-xl mb-12 text-white/80">Free consultation. Replies within 24 hours.</p>
+        <p className="text-xl mb-12 text-midnight/80">Free consultation. Replies within 24 hours.</p>
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-white text-whatsapp px-10 py-5 rounded-2xl font-bold text-xl shadow-xl"
+          className="inline-flex items-center gap-3 bg-midnight text-gold px-10 py-5 rounded-2xl font-bold text-xl shadow-xl"
         >
           <MessageCircle size={24} />
           Chat on WhatsApp
@@ -629,15 +629,15 @@ const FinalCTA = () => {
 
 const Footer = () => {
   return (
-    <footer className="py-12 bg-black text-white/40 text-sm border-t border-white/5 pb-32">
+    <footer className="py-12 bg-midnight text-parchment/40 text-sm border-t border-slate-blue/20 pb-32">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="font-display font-bold text-white text-lg">
-          ATA <span className="text-whatsapp">Tech Hub</span>
+        <div className="font-display font-bold text-parchment text-lg">
+          ATA <span className="text-gold">Tech Hub</span>
         </div>
         <div>© 2026 ATA Tech Hub. All rights reserved.</div>
         <div className="flex gap-8">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
         </div>
       </div>
     </footer>
@@ -653,7 +653,7 @@ const StickyCTA = () => {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full bg-whatsapp text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 whatsapp-shadow"
+        className="w-full bg-gold text-midnight py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 gold-shadow"
       >
         <MessageCircle size={22} />
         Chat on WhatsApp
@@ -672,23 +672,23 @@ const WhatsAppPopup = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
           exit={{ opacity: 0, y: 50, scale: 0.9 }}
           className="fixed bottom-24 right-6 z-[60] max-w-xs w-full"
         >
-          <div className="bg-white rounded-3xl p-6 shadow-2xl border border-black/5 relative">
+          <div className="bg-midnight rounded-3xl p-6 shadow-2xl border border-slate-blue/20 relative">
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 text-black/20 hover:text-black/60 transition-colors"
+              className="absolute top-4 right-4 text-parchment/20 hover:text-parchment/60 transition-colors"
             >
               <X size={20} />
             </button>
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center text-white shrink-0">
+              <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-midnight shrink-0">
                 <MessageCircle size={24} />
               </div>
               <div>
-                <h4 className="font-bold text-primary">Need Help?</h4>
-                <p className="text-xs text-black/40">We're online now</p>
+                <h4 className="font-bold text-parchment">Need Help?</h4>
+                <p className="text-xs text-parchment/40">We're online now</p>
               </div>
             </div>
-            <p className="text-sm text-black/60 mb-6 leading-relaxed">
+            <p className="text-sm text-parchment/60 mb-6 leading-relaxed">
               Have a project in mind? Let's discuss how we can help your business grow.
             </p>
             <a 
@@ -696,7 +696,7 @@ const WhatsAppPopup = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => vo
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="w-full bg-whatsapp text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-whatsapp/90 transition-colors shadow-lg shadow-whatsapp/20"
+              className="w-full bg-gold text-midnight py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-gold/90 transition-colors shadow-lg shadow-gold/20"
             >
               <MessageCircle size={18} />
               Chat on WhatsApp
