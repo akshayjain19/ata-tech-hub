@@ -5,16 +5,20 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --color-whatsapp: #25D366;
-  --color-primary: #0A0A0A;
+  --color-primary: #121212;
+  --color-midnight: #121212;
+  --color-gold: #D4AF37;
+  --color-parchment: #F5F5F5;
+  --color-slate-blue: #4A5568;
 }
 
 @layer base {
   body {
-    @apply bg-white text-primary font-sans antialiased;
+    @apply bg-midnight text-parchment font-sans antialiased;
   }
   
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight;
+    @apply font-display tracking-tight text-parchment;
   }
 }
 
@@ -22,8 +26,12 @@
   box-shadow: 0 4px 14px 0 rgba(37, 211, 102, 0.39);
 }
 
+.gold-shadow {
+  box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.3);
+}
+
 .glass-nav {
-  @apply bg-white/80 backdrop-blur-md border-b border-black/5;
+  @apply bg-midnight/80 backdrop-blur-md border-b border-slate-blue/20;
 }
 
 /* Hide scrollbar but keep functionality */
