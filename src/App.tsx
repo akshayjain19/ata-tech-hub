@@ -398,6 +398,12 @@ const Founders = () => {
       role: "Tech + Execution",
       linkedin: "https://www.linkedin.com/in/taruncharan/",
       bullets: ["Full-stack architect", "Scalable systems expert", "Fast delivery focus"]
+    },
+    {
+      name: "Prakhar Patni",
+      role: "Growth + Partnerships",
+      linkedin: "https://www.linkedin.com/in/prakhar-patni/",
+      bullets: ["Business development lead", "Client relationship expert", "Revenue growth focus"]
     }
   ];
 
@@ -406,10 +412,10 @@ const Founders = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-parchment">Connect with Founders</h2>
-          <p className="text-parchment/60 max-w-xl mx-auto">The duo combining product vision with technical excellence. Connect on LinkedIn to discuss your project.</p>
+          <p className="text-parchment/60 max-w-xl mx-auto">The team combining product vision, technical excellence, and business growth. Connect on LinkedIn to discuss your project.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {founders.map((f, i) => (
             <motion.div 
               key={i} 
